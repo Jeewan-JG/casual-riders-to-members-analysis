@@ -8,6 +8,7 @@ The analysis explores riding patterns, trip duration, and weekday vs weekend usa
 
 Tools used: **Excel, BigQuery SQL, and Tableau**.
 
+
 ---
 
 ## 📊 Project Overview
@@ -48,9 +49,9 @@ Cyclistic wants to increase the number of **annual memberships**.
 
 Annual members are more profitable than casual riders, so the marketing team wants to understand:
 
-- How casual riders and members behave differently
-- When casual riders ride the most
-- What strategies can convert casual riders into members
+- How casual riders and members behave differently ?
+- When casual riders ride the most ?
+- What strategies can convert casual riders into members ?
 
 ---
 
