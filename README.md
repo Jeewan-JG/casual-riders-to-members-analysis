@@ -19,7 +19,7 @@ The goal is to identify patterns that help the company convert **casual riders i
 
 The analysis was performed using **Excel, BigQuery SQL, and Tableau**.
 
-![Data Pipeline](live.png)
+![Data Pipeline](data.png)
 ---
 
 Cyclistic Bike Share Analysis
@@ -302,7 +302,7 @@ From the visualization:
 
 ### Dashboard Preview
 
-![Tableau Dashboard](dashboard.png)
+![Tableau Dashboard](dd.png)
 
 ### Interactive Dashboard
 
