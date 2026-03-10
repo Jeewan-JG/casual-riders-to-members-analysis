@@ -299,8 +299,7 @@ From the visualization:
 
 ### Dashboard Preview
 
-![Tableau Dashboard](<img width="3318" height="1798" alt="Dashboard 2" src="https://github.com/user-attachments/assets/c4a3266c-83fd-42dd-964a-75716547fb5a" />
-)
+![Tableau Dashboard](images/dashboard.png)
 
 ### Interactive Dashboard
 
