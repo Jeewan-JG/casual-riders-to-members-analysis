@@ -123,7 +123,6 @@ FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`;
 
 ---
 
-```markdown
 ### Average Ride Duration by User Type and Day
 
 This query calculates the average ride duration for members and casual riders for each day of the week.
@@ -149,7 +148,7 @@ ORDER BY day_of_week, member_type;
 
 ---
 
-```markdown
+
 ### Total Rides by Day of Week
 
 This query summarizes the total number of rides and average ride duration for each weekday.
@@ -168,7 +167,6 @@ GROUP BY day_of_week;
 
 ---
 
-```markdown
 ### Ride Count by Member Type and Day
 
 This query compares ride activity between members and casual riders across different days of the week.
@@ -188,7 +186,6 @@ GROUP BY member_type, day_of_week;
 
 ---
 
-```markdown
 ### Member vs Casual Ride Comparison
 
 This query compares the total number of rides taken by members and casual riders.
@@ -213,7 +210,6 @@ ORDER BY total_rides DESC;
 
 ---
 
-```markdown
 ### Weekday Ride Trend by Member Type
 
 This query analyzes ride frequency for members and casual riders across different weekdays.
@@ -239,7 +235,6 @@ ORDER BY day_of_week, member_type;
 
 ---
 
-```markdown
 ### Most Common Ride Day (Mode)
 
 This query identifies the most frequently occurring weekday for bike rides.
