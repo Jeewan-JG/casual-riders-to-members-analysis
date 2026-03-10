@@ -19,6 +19,7 @@ The goal is to identify patterns that help the company convert **casual riders i
 
 The analysis was performed using **Excel, BigQuery SQL, and Tableau**.
 
+![Data Pipeline](live.png)
 ---
 
 Cyclistic Bike Share Analysis
@@ -27,6 +28,7 @@ Project description
 │
 Project overview
 │
+
 Table of contents
 
 # 📑 Table of Contents
