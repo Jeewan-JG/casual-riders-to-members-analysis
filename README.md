@@ -1,33 +1,20 @@
-# Cyclistic Bike Share Analysis: Converting Casual Riders to Members
+## Cyclistic Bike Share Analysis: Converting Casual Riders to Members
 
 This project analyzes **Cyclistic bike-share data** to understand behavioral differences between **casual riders** and **annual members**.
-
 The goal is to identify **data-driven strategies** that can help the company convert casual riders into **profitable annual memberships**.
+The analysis explores riding patterns, trip duration, and weekday vs weekend usage to uncover insights that support marketing and business decisions.
 
-The analysis explores riding patterns, trip duration, and weekday vs weekend usage to uncover insights that can support marketing and business decisions.
+**Tools used:** Excel, BigQuery SQL, and Tableau.
 
-Tools used: **Excel, BigQuery SQL, and Tableau**.
+![Data Pipeline](data.png)
 
 
 ---
-
 ## Project Overview
 
 This project analyzes Cyclistic bike-share data to understand how **casual riders** and **members** use the service differently.
+The goal is to identify patterns that help the company convert **casual riders into annual members**.
 
-The goal is to identify patterns that help the company convert **casual riders into annual members**, which are more profitable.
-
-The analysis was performed using **Excel, BigQuery SQL, and Tableau**.
-
-![Data Pipeline](data.png)
----
-
-Cyclistic Bike Share Analysis
-│
-Project description
-│
-Project overview
-│
 
 Table of contents
 
