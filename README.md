@@ -1,4 +1,4 @@
-# 🚴 Cyclistic Bike Share Analysis: Converting Casual Riders to Members
+# Cyclistic Bike Share Analysis: Converting Casual Riders to Members
 
 This project analyzes **Cyclistic bike-share data** to understand behavioral differences between **casual riders** and **annual members**.
 
@@ -11,7 +11,7 @@ Tools used: **Excel, BigQuery SQL, and Tableau**.
 
 ---
 
-## 📊 Project Overview
+## Project Overview
 
 This project analyzes Cyclistic bike-share data to understand how **casual riders** and **members** use the service differently.
 
@@ -45,7 +45,7 @@ Table of contents
 
 ---
 
-# 🎯 Business Problem
+# Business Problem
 
 Cyclistic wants to increase the number of **annual memberships**.
 
@@ -72,7 +72,7 @@ The dataset was cleaned and processed using **BigQuery**.
 
 ---
 
-# 🛠 Tools Used
+# Tools Used
 
 | Tool | Purpose |
 |-----|------|
@@ -83,7 +83,7 @@ The dataset was cleaned and processed using **BigQuery**.
 
 ---
 
-# 🧹 Data Cleaning in BigQuery
+#  Data Cleaning in BigQuery
 
 To prepare the dataset for analysis, a cleaned view was created.
 
