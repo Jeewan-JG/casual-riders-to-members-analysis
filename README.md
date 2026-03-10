@@ -299,7 +299,7 @@ From the visualization:
 
 ### Dashboard Preview
 
-![Tableau Dashboard](images/dashboard.png)
+![Tableau Dashboard](dashboard.png)
 
 ### Interactive Dashboard
 
