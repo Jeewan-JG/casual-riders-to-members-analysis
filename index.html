@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Converting Casual Riders to Members</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    .hero {
+      background: linear-gradient(120deg, #155799, #159957);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: white;
+    }
+
+    h2 {
+      color: #159957;
+      margin-top: 40px;
+    }
+
+    .preview-img {
+      width: 100%;
+      max-width: 1000px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .dashboard-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 70%;
+      margin-top: 20px;
+    }
+
+    .dashboard-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section {
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Case Study: Converting Casual Riders to Members</h1>
+    <p>Data analysis case study using Excel, BigQuery SQL, and Tableau.</p>
+  </section>
+
+  <div class="container">
+
+    <section class="section">
+      <h2>Project Overview</h2>
+      <p>
+        This project analyzes <strong>Cyclistic bike-share data</strong> to understand how
+        <strong>casual riders</strong> and <strong>annual members</strong> use the service differently.
+        The objective is to uncover behavioral patterns and generate <strong>data-driven insights</strong>
+        that can help the company convert casual riders into <strong>profitable annual memberships</strong>.
+      </p>
+
+      <p>The analysis focuses on identifying differences in usage behavior, including:</p>
+      <ul>
+        <li>Riding patterns between casual riders and members</li>
+        <li>Trip duration trends across different user types</li>
+        <li>Weekday vs weekend usage behavior</li>
+        <li>Key behavioral insights that can inform marketing strategies</li>
+        <li>Opportunities to convert casual riders into annual members</li>
+      </ul>
+
+      <p><strong>Tools used:</strong> Excel, BigQuery SQL, and Tableau.</p>
+    </section>
+
+    <section class="section">
+      <h2>Dashboard Preview</h2>
+      <img src="dd.png" alt="Cyclistic Dashboard Preview" class="preview-img" />
+    </section>
+
+    <section class="section">
+      <h2>Interactive Dashboard</h2>
+      <p>Explore the full interactive Tableau dashboard below:</p>
+
+      <div class="dashboard-wrap">
+        <iframe
+          src="https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2?:showVizHome=no&:embed=true"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
