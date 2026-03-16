@@ -295,13 +295,6 @@ From the visualization:
 
 ## Interactive Dashboard
 
-Explore the interactive Tableau dashboard below:
+Explore the full interactive Tableau dashboard on the project website:
 
-<div style="width:100%; height:800px;">
-<iframe
-src="https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2"
-width="100%"
-height="800"
-frameborder="0">
-</iframe>
-</div>
+🔗 [View the Interactive Dashboard](https://jeewan-jg.github.io/casual-riders-to-members-analysis/)
