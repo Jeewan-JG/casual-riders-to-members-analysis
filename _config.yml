@@ -1,6 +1,7 @@
 title: Cyclistic Bike Share Analysis
+description: Data analysis case study exploring how to convert casual riders into annual members using Excel, BigQuery SQL, and Tableau.
 logo: profile_pic.png
 show_downloads: true
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
-- jekyll-remote-theme 
+- jekyll-remote-theme
