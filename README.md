@@ -293,5 +293,15 @@ From the visualization:
 
 ![Tableau Dashboard](dd.png)
 
-### Interactive Dashboard
-[Open the interactive Tableau dashboard](https://public.tableau.com/app/profile/jeewan.gurung/viz/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2)
+## Interactive Dashboard
+
+Explore the interactive Tableau dashboard below:
+
+<div style="width:100%; height:800px;">
+<iframe
+src="https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2"
+width="100%"
+height="800"
+frameborder="0">
+</iframe>
+</div>
