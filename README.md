@@ -1,4 +1,6 @@
-# Cyclistic Bike Share Analysis
+---
+title: Cyclistic Bike Share Analysis
+---
 
 
 ## Case Study: Converting Casual Riders to Members
