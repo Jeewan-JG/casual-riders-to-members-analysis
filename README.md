@@ -294,7 +294,4 @@ From the visualization:
 ![Tableau Dashboard](dd.png)
 
 ### Interactive Dashboard
-
-Explore the full interactive dashboard here:
-
-🔗 https://public.tableau.com/app/profile/jeewan.gurung/viz/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2
+[Open the interactive Tableau dashboard](https://public.tableau.com/app/profile/jeewan.gurung/viz/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2)
