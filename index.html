@@ -1,348 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study: Converting Casual Riders to Members</title>
-  <style>
-    :root{
-      --primary:#159957;
-      --primary-dark:#155799;
-      --bg:#f6f8fa;
-      --card:#ffffff;
-      --text:#333333;
-      --muted:#666666;
-      --border:#e5e7eb;
-      --code-bg:#0f172a;
-      --code-text:#e5e7eb;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyclistic Bike Share Analysis</title>
 
-    *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+<style>
 
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-    }
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f6f8fa;
+color:#333;
+line-height:1.6;
+}
 
-    .hero{
-      background:linear-gradient(120deg, var(--primary-dark), var(--primary));
-      color:#fff;
-      text-align:center;
-      padding:80px 20px;
-    }
+.hero{
+background:linear-gradient(120deg,#155799,#159957);
+color:white;
+padding:70px 20px;
+text-align:center;
+}
 
-    .hero h1{
-      margin:0 0 16px;
-      font-size:2.8rem;
-    }
+.hero h1{
+margin:0;
+font-size:2.6rem;
+}
 
-    .hero p{
-      max-width:900px;
-      margin:0 auto;
-      font-size:1.15rem;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px;
+}
 
-    .container{
-      max-width:1100px;
-      margin:30px auto 60px;
-      padding:0 20px;
-    }
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+margin-bottom:25px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
 
-    .card{
-      background:var(--card);
-      border-radius:12px;
-      padding:28px;
-      margin-bottom:24px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    }
+h2{
+color:#159957;
+margin-top:0;
+}
 
-    h2{
-      color:var(--primary);
-      margin-top:0;
-    }
+h3{
+margin-top:25px;
+}
 
-    h3{
-      color:#1f2937;
-      margin-top:28px;
-      margin-bottom:10px;
-    }
+ul{
+padding-left:20px;
+}
 
-    p{margin:0 0 16px;}
-    ul{padding-left:22px;}
-    li{margin-bottom:8px;}
+img{
+max-width:100%;
+border-radius:10px;
+margin:20px auto;
+display:block;
+}
 
-    .toc ul{
-      list-style:none;
-      padding-left:0;
-      columns:2;
-      gap:32px;
-    }
+pre{
+background:#0f172a;
+color:#e5e7eb;
+padding:18px;
+border-radius:10px;
+overflow-x:auto;
+}
 
-    .toc a{
-      text-decoration:none;
-      color:var(--primary-dark);
-      font-weight:600;
-    }
+code{
+font-family:Consolas,monospace;
+}
 
-    .toc a:hover{
-      text-decoration:underline;
-    }
+table{
+width:100%;
+border-collapse:collapse;
+}
 
-    img{
-      max-width:100%;
-      display:block;
-      margin:20px auto;
-      border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
+th,td{
+border:1px solid #ddd;
+padding:10px;
+}
 
-    .dashboard-wrap{
-      position:relative;
-      width:100%;
-      height:0;
-      padding-bottom:70%;
-      border-radius:10px;
-      overflow:hidden;
-      background:#f0f0f0;
-    }
+th{
+background:#f3f4f6;
+}
 
-    .dashboard-wrap iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:none;
-    }
+.dashboard-wrap{
+position:relative;
+width:100%;
+height:0;
+padding-bottom:70%;
+}
 
-    pre{
-      background:var(--code-bg);
-      color:var(--code-text);
-      padding:18px;
-      border-radius:10px;
-      overflow-x:auto;
-      font-size:0.95rem;
-      line-height:1.5;
-      margin:14px 0 22px;
-    }
+.dashboard-wrap iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
+}
 
-    code{
-      font-family:Consolas, Monaco, monospace;
-    }
+.footer{
+text-align:center;
+color:#777;
+margin-top:20px;
+}
 
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:10px;
-    }
-
-    th, td{
-      border:1px solid var(--border);
-      padding:12px;
-      text-align:left;
-      vertical-align:top;
-    }
-
-    th{
-      background:#f9fafb;
-    }
-
-    .footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:0.95rem;
-      margin-top:8px;
-    }
-
-    @media (max-width: 768px){
-      .hero h1{font-size:2.1rem;}
-      .toc ul{columns:1;}
-      .card{padding:22px;}
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <h1>Case Study: Converting Casual Riders to Members</h1>
-    <p>Tools used: Excel, BigQuery SQL, and Tableau.</p>
-  </section>
+<section class="hero">
+<h1>Cyclistic Bike Share Analysis</h1>
+<p>Case Study: Converting Casual Riders to Annual Members</p>
+<p>Tools used: Excel, BigQuery SQL, and Tableau</p>
+</section>
 
-  <div class="container">
+<div class="container">
 
-    <section class="card" id="overview">
-      <h2>Project Overview</h2>
-      <p>
-        This project analyzes Cyclistic bike-share data to understand how casual riders and annual members use the service differently.
-        The objective is to uncover behavioral patterns and generate data-driven insights that can help the company convert casual riders
-        into profitable annual memberships.
-      </p>
-      <p>The analysis focuses on identifying differences in usage behavior, including:</p>
-      <ul>
-        <li>Riding patterns between casual riders and members</li>
-        <li>Trip duration trends across different user types</li>
-        <li>Weekday vs weekend usage behavior</li>
-        <li>Key behavioral insights that can inform marketing strategies</li>
-        <li>Opportunities to convert casual riders into annual members</li>
-      </ul>
-    </section>
+<section class="card">
+<h2>Project Overview</h2>
 
-    <section class="card toc" id="table-of-contents">
-      <h2>📑 Table of Contents</h2>
-      <ul>
-        <li><a href="#business-problem">Business Problem</a></li>
-        <li><a href="#dataset">Dataset</a></li>
-        <li><a href="#tools-used">Tools Used</a></li>
-        <li><a href="#data-pipeline">Data Pipeline</a></li>
-        <li><a href="#data-cleaning">Data Cleaning in BigQuery</a></li>
-        <li><a href="#sql-analysis">SQL Analysis</a></li>
-        <li><a href="#key-insights">Key Insights</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#recommendations">Business Recommendations</a></li>
-        <li><a href="#project-structure">Project Structure</a></li>
-      </ul>
-    </section>
+<p>
+This project analyzes Cyclistic bike-share data to understand how casual riders and annual members use the service differently.
+The objective is to uncover behavioral patterns and generate data-driven insights that help convert casual riders into profitable annual memberships.
+</p>
 
-    <section class="card" id="business-problem">
-      <h2>Business Problem</h2>
-      <p>Cyclistic wants to increase the number of annual memberships.</p>
-      <p>
-        Annual members are more profitable than casual riders, so the marketing team wants to understand:
-      </p>
-      <ul>
-        <li>How casual riders and members behave differently</li>
-        <li>When casual riders ride the most</li>
-        <li>What strategies can convert casual riders into members</li>
-      </ul>
-    </section>
+<ul>
+<li>Riding patterns between casual riders and members</li>
+<li>Trip duration trends across different user types</li>
+<li>Weekday vs weekend usage behavior</li>
+<li>Marketing opportunities to convert casual riders</li>
+</ul>
 
-    <section class="card" id="dataset">
-      <h2>📂 Dataset</h2>
-      <p>The dataset contains bike-share trip records including:</p>
-      <ul>
-        <li><code>ride_id</code></li>
-        <li><code>rideable_type</code></li>
-        <li><code>start_time</code></li>
-        <li><code>end_time</code></li>
-        <li>station names</li>
-        <li><code>usertype</code> (Customer / Subscriber)</li>
-      </ul>
-      <p>The dataset was cleaned and processed using BigQuery.</p>
-    </section>
+</section>
 
-    <section class="card" id="tools-used">
-      <h2>Tools Used</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tool</th>
-            <th>Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Excel</td>
-            <td>Initial exploration</td>
-          </tr>
-          <tr>
-            <td>BigQuery</td>
-            <td>Data cleaning &amp; SQL analysis</td>
-          </tr>
-          <tr>
-            <td>Tableau</td>
-            <td>Data visualization</td>
-          </tr>
-          <tr>
-            <td>GitHub</td>
-            <td>Project portfolio</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+<section class="card">
+<h2>Business Problem</h2>
 
-    <section class="card" id="data-pipeline">
-      <h2>Data Pipeline</h2>
-      <p>This diagram shows the flow of data from source to analysis and visualization.</p>
-      <img src="data.png" alt="Data Pipeline Diagram">
-    </section>
+<p>Cyclistic wants to increase the number of annual memberships.</p>
 
-    <section class="card" id="data-cleaning">
-      <h2>Data Cleaning in BigQuery</h2>
-      <p>To prepare the dataset for analysis, a cleaned view was created.</p>
-      <p>This step:</p>
-      <ul>
-        <li>removed invalid trips</li>
-        <li>calculated ride duration</li>
-        <li>created weekday information</li>
-      </ul>
+<p>The marketing team wants to understand:</p>
 
-      <h3>Create Cleaned Trips View</h3>
-      <pre><code>CREATE OR REPLACE VIEW `primal-chariot-479401-i4.divvy_trip_2019_q4.v_trips_2019_clean` AS
+<ul>
+<li>How casual riders and members behave differently</li>
+<li>When casual riders ride the most</li>
+<li>How to convert casual riders into members</li>
+</ul>
+
+</section>
+
+<section class="card">
+<h2>Dataset</h2>
+
+<p>The dataset contains bike-share trip records including:</p>
+
+<ul>
+<li>ride_id</li>
+<li>rideable_type</li>
+<li>start_time</li>
+<li>end_time</li>
+<li>station names</li>
+<li>usertype (Customer / Subscriber)</li>
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>Tools Used</h2>
+
+<table>
+
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Excel</td>
+<td>Initial exploration</td>
+</tr>
+
+<tr>
+<td>BigQuery</td>
+<td>Data cleaning & SQL analysis</td>
+</tr>
+
+<tr>
+<td>Tableau</td>
+<td>Data visualization</td>
+</tr>
+
+<tr>
+<td>GitHub</td>
+<td>Project portfolio</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="card">
+
+<h2>Data Pipeline</h2>
+
+<img src="data.png" alt="Data Pipeline">
+
+</section>
+
+<section class="card">
+
+<h2>Data Cleaning in BigQuery</h2>
+
+<p>A cleaned view was created to prepare the dataset for analysis.</p>
+
+<pre><code>
+CREATE OR REPLACE VIEW `primal-chariot-479401-i4.divvy_trip_2019_q4.v_trips_2019_clean` AS
 
 SELECT
-    *,
+*,
 
-    -- ride length (same as Excel calculation)
-    TIMESTAMP_DIFF(end_time, start_time, MINUTE) AS ride_length,
+TIMESTAMP_DIFF(end_time,start_time,MINUTE) AS ride_length,
 
-    -- day of week
-    FORMAT_DATE('%A', DATE(start_time)) AS day_of_week
+FORMAT_DATE('%A',DATE(start_time)) AS day_of_week
 
 FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_all`
-WHERE end_time > start_time;</code></pre>
-    </section>
+WHERE end_time > start_time;
+</code></pre>
 
-    <section class="card" id="sql-analysis">
+</section>
+
+<section class="card">
 
 <h2>SQL Analysis</h2>
 
-<h3>Average Ride Duration by User Type and Day</h3>
-<p>This query calculates the average ride duration for members and casual riders for each day of the week.</p>
+<h3>Average Ride Duration by User Type</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.trend_avg_ride_by_usertype_day` AS
+CREATE OR REPLACE TABLE trend_avg_ride_by_usertype_day AS
 
 SELECT
 day_of_week,
 
 CASE
-WHEN usertype = 'Subscriber' THEN 'member'
-WHEN usertype = 'Customer' THEN 'casual'
-ELSE 'unknown'
+WHEN usertype='Subscriber' THEN 'member'
+WHEN usertype='Customer' THEN 'casual'
 END AS member_type,
 
 AVG(duration_sec) AS avg_duration_sec
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
-
-GROUP BY day_of_week, member_type
-ORDER BY day_of_week, member_type;
+FROM trips_2019_clean
+GROUP BY day_of_week,member_type;
 </code></pre>
 
-
-<h3>Total Rides by Day of Week</h3>
+<h3>Total Rides by Day</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.summary_day` AS
+CREATE OR REPLACE TABLE summary_day AS
 
 SELECT
 day_of_week,
 COUNT(*) AS total_rides,
 AVG(duration_sec) AS avg_ride_sec
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
-
+FROM trips_2019_clean
 GROUP BY day_of_week;
 </code></pre>
 
-
-<h3>Ride Count by Member Type and Day</h3>
+<h3>Ride Count by Member Type</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.summary_member_day` AS
+CREATE OR REPLACE TABLE summary_member_day AS
 
 SELECT
 usertype AS member_type,
@@ -350,61 +283,46 @@ day_of_week,
 COUNT(*) AS total_rides,
 AVG(duration_sec) AS avg_ride_sec
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
-
-GROUP BY member_type, day_of_week;
+FROM trips_2019_clean
+GROUP BY member_type,day_of_week;
 </code></pre>
 
-
-<h3>Member vs Casual Ride Comparison</h3>
+<h3>Member vs Casual Comparison</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.trend_member_vs_casual_users` AS
+CREATE OR REPLACE TABLE trend_member_vs_casual_users AS
 
 SELECT
 
 CASE
-WHEN usertype = 'Subscriber' THEN 'member'
-WHEN usertype = 'Customer' THEN 'casual'
-ELSE 'unknown'
+WHEN usertype='Subscriber' THEN 'member'
+WHEN usertype='Customer' THEN 'casual'
 END AS member_type,
 
 COUNT(*) AS total_rides
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
-
-GROUP BY member_type
-ORDER BY total_rides DESC;
+FROM trips_2019_clean
+GROUP BY member_type;
 </code></pre>
 
-
-<h3>Weekday Ride Trend by Member Type</h3>
+<h3>Weekday Ride Trends</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.trend_weekday_ride_by_member_casual` AS
+CREATE OR REPLACE TABLE trend_weekday_ride_by_member_casual AS
 
 SELECT
 day_of_week,
-
-CASE
-WHEN usertype = 'Subscriber' THEN 'member'
-WHEN usertype = 'Customer' THEN 'casual'
-ELSE 'unknown'
-END AS member_type,
-
+usertype,
 COUNT(*) AS total_rides
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
-
-GROUP BY day_of_week, member_type
-ORDER BY day_of_week, member_type;
+FROM trips_2019_clean
+GROUP BY day_of_week,usertype;
 </code></pre>
 
-
-<h3>Most Common Ride Day (Mode)</h3>
+<h3>Most Common Ride Day</h3>
 
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_summary` AS
+CREATE OR REPLACE TABLE trips_2019_summary AS
 
 SELECT
 AVG(duration_sec) AS avg_duration_sec,
@@ -412,22 +330,19 @@ MAX(duration_sec) AS max_duration_sec,
 
 (
 SELECT day_of_week
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`
+FROM trips_2019_clean
 GROUP BY day_of_week
 ORDER BY COUNT(*) DESC
 LIMIT 1
 ) AS mode_day
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`;
+FROM trips_2019_clean;
 </code></pre>
-
 
 <h3>Overall Ride Summary</h3>
 
-<p>This query generates overall statistics for the dataset.</p>
-
 <pre><code>
-CREATE OR REPLACE TABLE `primal-chariot-479401-i4.divvy_trip_2019_q4.summary_overall` AS
+CREATE OR REPLACE TABLE summary_overall AS
 
 SELECT
 COUNT(*) AS total_rides,
@@ -435,86 +350,59 @@ AVG(duration_sec) AS avg_ride_sec,
 MIN(duration_sec) AS min_ride_sec,
 MAX(duration_sec) AS max_ride_sec
 
-FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`;
+FROM trips_2019_clean;
 </code></pre>
 
 </section>
 
-    <section class="card" id="key-insights">
-      <h2>📊 Key Insights</h2>
-      <p>Based on the SQL analysis, several patterns were identified between casual riders and members.</p>
+<section class="card">
 
-      <h3>1. Riding Patterns</h3>
-      <p>Casual riders tend to ride more frequently on weekends, suggesting leisure-based usage.</p>
-      <p>Members ride more consistently during weekdays, which suggests commuting or routine travel.</p>
+<h2>Key Insights</h2>
 
-      <h3>2. Ride Duration</h3>
-      <p>Casual riders generally have longer ride durations compared to members.</p>
-      <p>This indicates that casual riders are more likely using bikes for recreational purposes.</p>
+<ul>
+<li>Casual riders peak on weekends.</li>
+<li>Members ride more during weekdays.</li>
+<li>Casual riders have longer ride durations.</li>
+</ul>
 
-      <h3>3. Weekly Usage Trends</h3>
-      <p>Weekday ride counts are dominated by members, while weekend usage is more balanced between both groups.</p>
-      <p>This highlights an opportunity to target casual riders during peak leisure periods.</p>
-    </section>
+</section>
 
-    <section class="card" id="dashboard">
-      <h2>📈 Dashboard</h2>
-      <p>
-        The final analysis was visualized using Tableau dashboards to compare riding behavior between casual riders and members.
-      </p>
-      <p>The dashboard highlights:</p>
-      <ul>
-        <li>Ride distribution between members and casual riders</li>
-        <li>Ride frequency across days of the week</li>
-        <li>Differences in average ride duration</li>
-        <li>Weekly usage patterns between commuters and leisure riders</li>
-      </ul>
+<section class="card">
 
-      <h3>Dashboard Insights</h3>
-      <p>From the visualization:</p>
-      <ul>
-        <li>Casual riders peak on weekends, indicating leisure usage</li>
-        <li>Members ride more frequently during weekdays, suggesting commuting behavior</li>
-        <li>Casual riders tend to have longer ride durations</li>
-      </ul>
+<h2>Dashboard</h2>
 
-      <h3>Dashboard Preview</h3>
-      <img src="dd.png" alt="Tableau Dashboard Preview">
+<img src="dd.png" alt="Dashboard Preview">
 
-      <h3>Interactive Dashboard</h3>
-      <p>Explore the full interactive Tableau dashboard below:</p>
-      <div class="dashboard-wrap">
-        <iframe
-          src="https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2?:embed=y&:display_count=n&:showVizHome=n"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
+<h3>Interactive Tableau Dashboard</h3>
 
-    <section class="card" id="recommendations">
-      <h2>Business Recommendations</h2>
-      <ul>
-        <li>Create targeted marketing campaigns aimed at casual riders during weekends.</li>
-        <li>Promote the value of annual memberships for riders who use bikes regularly.</li>
-        <li>Offer incentives or discounts to encourage casual riders to upgrade to member plans.</li>
-      </ul>
-    </section>
+<div class="dashboard-wrap">
 
-    <section class="card" id="project-structure">
-      <h2>Project Structure</h2>
-      <ul>
-        <li><strong>README.md</strong> – repository overview</li>
-        <li><strong>index.html</strong> – GitHub Pages portfolio webpage</li>
-        <li><strong>data.png</strong> – data pipeline image</li>
-        <li><strong>dd.png</strong> – dashboard preview image</li>
-      </ul>
-    </section>
+<iframe
+src="https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2?:embed=y&:display_count=n&:showVizHome=n"
+allowfullscreen>
+</iframe>
 
-    <div class="footer">
-      Built as a data analysis portfolio project by Jeewan Gurung.
-    </div>
+</div>
 
-  </div>
+</section>
+
+<section class="card">
+
+<h2>Business Recommendations</h2>
+
+<ul>
+<li>Target casual riders during weekends</li>
+<li>Promote membership value</li>
+<li>Offer membership discounts</li>
+</ul>
+
+</section>
+
+<div class="footer">
+Portfolio project by Jeewan Gurung
+</div>
+
+</div>
 
 </body>
 </html>
