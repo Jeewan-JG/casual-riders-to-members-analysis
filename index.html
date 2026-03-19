@@ -32,25 +32,65 @@
     .hero{
       background:linear-gradient(120deg, var(--primary-dark), var(--primary));
       color:#fff;
-      text-align:center;
-      padding:80px 20px;
+      padding:70px 20px;
     }
 
-    .hero h1{
-      margin:0 0 16px;
-      font-size:2.8rem;
-    }
-
-    .hero p{
-      max-width:900px;
+    .hero-content{
+      max-width:1100px;
       margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+
+    .profile-pic{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      display:block;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      border:4px solid rgba(255,255,255,0.35);
+      flex-shrink:0;
+    }
+
+    .hero-text{
+      text-align:left;
+      max-width:760px;
+    }
+
+    .hero-text h1{
+      margin:0 0 12px;
+      font-size:2.8rem;
+      line-height:1.2;
+    }
+
+    .hero-text p{
+      margin:0;
       font-size:1.15rem;
+      opacity:0.96;
     }
 
     .container{
       max-width:1100px;
       margin:30px auto 60px;
       padding:0 20px;
+    }
+
+    .banner-image{
+      margin:30px auto 40px;
+      text-align:center;
+    }
+
+    .banner-image img{
+      width:100%;
+      max-width:900px;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      display:block;
+      margin:0 auto;
     }
 
     .card{
@@ -162,19 +202,60 @@
     }
 
     @media (max-width: 768px){
-      .hero h1{font-size:2.1rem;}
-      .card{padding:22px;}
+      .hero{
+        padding:55px 20px;
+      }
+
+      .hero-content{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:2.1rem;
+      }
+
+      .hero-text p{
+        font-size:1rem;
+      }
+
+      .profile-pic{
+        width:110px;
+        height:110px;
+      }
+
+      .banner-image{
+        margin:20px auto 30px;
+      }
+
+      .card{
+        padding:22px;
+      }
     }
   </style>
 </head>
 <body>
 
   <section class="hero">
-    <h1>Case Study: Converting Casual Riders to Members</h1>
-    <p>Tools used: Excel, BigQuery SQL, and Tableau.</p>
+    <div class="hero-content">
+      <img src="profile_pic.png" alt="Jeewan Gurung profile picture" class="profile-pic">
+
+      <div class="hero-text">
+        <h1>Case Study: Converting Casual Riders to Members</h1>
+        <p>Tools used: Excel, BigQuery SQL, and Tableau.</p>
+      </div>
+    </div>
   </section>
 
   <div class="container">
+
+    <div class="banner-image">
+      <img src="data.png" alt="Project Banner">
+    </div>
 
     <section class="card" id="overview">
       <h2>Project Overview</h2>
@@ -199,7 +280,6 @@
         <li><a href="#business-problem">Business Problem</a></li>
         <li><a href="#dataset">Dataset</a></li>
         <li><a href="#tools-used">Tools Used</a></li>
-        <li><a href="#data-pipeline">Data Pipeline</a></li>
         <li><a href="#data-cleaning">Data Cleaning in BigQuery</a></li>
         <li><a href="#sql-analysis">SQL Analysis</a></li>
         <li><a href="#key-insights">Key Insights</a></li>
@@ -276,12 +356,6 @@
           </tr>
         </tbody>
       </table>
-    </section>
-
-    <section class="card" id="data-pipeline">
-      <h2>Data Pipeline</h2>
-      <p>This diagram shows the flow of data from source to analysis and visualization.</p>
-      <img src="data.png" alt="Data Pipeline Diagram">
     </section>
 
     <section class="card" id="data-cleaning">
@@ -490,8 +564,9 @@ FROM `primal-chariot-479401-i4.divvy_trip_2019_q4.trips_2019_clean`;</code></pre
       <ul>
         <li><strong>README.md</strong> – repository overview</li>
         <li><strong>index.html</strong> – GitHub Pages portfolio webpage</li>
-        <li><strong>data.png</strong> – data pipeline image</li>
+        <li><strong>data.png</strong> – project banner image</li>
         <li><strong>dd.png</strong> – dashboard preview image</li>
+        <li><strong>profile_pic.png</strong> – profile picture</li>
       </ul>
     </section>
 
