@@ -5,9 +5,7 @@
 
 ![Data Pipeline](data.png)
 
-
-This project analyzes **Cyclistic bike-share data** to understand how **casual riders** and **annual members** use the service differently. 
-The objective is to uncover behavioral patterns and generate **data-driven insights** that can help the company convert casual riders into **profitable annual memberships**.
+This project analyzes Cyclistic bike-share data to understand how casual riders and annual members use the service differently. The objective is to uncover behavioral patterns and generate data-driven insights that can help the company convert casual riders into profitable annual memberships.
 
 The analysis focuses on identifying differences in usage behavior, including:
 
@@ -50,12 +48,25 @@ Annual members are more profitable than casual riders, so the marketing team wan
 
 The dataset contains bike-share trip records including:
 
-- ride_id
-- rideable_type
+- trip_id
 - start_time
 - end_time
-- station names
+- bikeid
+- tripduration
+- from_station_id
+- from_station_name
+- to_station_id
+- to_station_name
 - usertype (Customer / Subscriber)
+- gender
+- birthyear
+- duration_sec
+- ride_length
+- day_of_week
+- avg_duration_sec
+- max_duration_sec
+- mode_day
+
 
 The dataset was cleaned and processed using **BigQuery**.
 
