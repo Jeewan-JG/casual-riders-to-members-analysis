@@ -1,7 +1,7 @@
 # Case Study: Converting Casual Riders to Members
 
 
-**Tools used:** Excel, BigQuery SQL, and Tableau.
+**Tools used:** Excel --- BigQuery SQL --- Tableau.
 
 ![Data Pipeline](data.png)
 
@@ -309,7 +309,7 @@ From the visualization:
 [View the Interactive Dashboard](https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 SQL| Data Cleaning | Data Analysis | KPI Development | Data Visualisation | Tableau | Problem Solving  
 
