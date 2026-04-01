@@ -306,6 +306,17 @@ From the visualization:
 
 ## Interactive Dashboard
 
-Explore the full interactive Tableau dashboard on the project website:
+[View the Interactive Dashboard](https://public.tableau.com/views/CyclisticBikeShareCasualvsMemberBehaviorAnalysis/Dashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+---
 
-🔗 [View the Interactive Dashboard](https://jeewan-jg.github.io/casual-riders-to-members-analysis/)
+## 🧠 Skills Demonstrated
+
+SQL| Data Cleaning | Data Analysis | KPI Development | Data Visualisation | Tableau | Problem Solving  
+
+---
+
+## 👤 Author
+
+Jeewan Gurung  
+LinkedIn: https://www.linkedin.com/in/jg936  
+GitHub: https://github.com/jeewan-jg  
